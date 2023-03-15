@@ -3,7 +3,7 @@ import express from "express"; // "type": "module"
 import { MongoClient } from 'mongodb'
 import * as dotenv from 'dotenv'
 import signinRouter from './router/login.router.js';
-import { auth } from "./middleware/auth.js";
+// import { auth } from "./middleware/auth.js";
 import cors from "cors";
 
 // import bcrypt   from ' bcrypt'
@@ -26,7 +26,7 @@ await client.connect();
   app.use(express.json())
 
   
-app.get("/",auth, function (request, response) {
+app.get("/", function (request, response) {
   response.send("🙋‍♂️, 🌏 🎊✨🤩");
 });
 
